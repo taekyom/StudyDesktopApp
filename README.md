@@ -10,9 +10,9 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ### 2. PracticeWinApp
 [PracticeWinApp 전체소스](https://github.com/taekyom/StudyDesktopApp/tree/main/WinformApp/PracticeWinApp) </br>
 
-#### CheckboxWinApp 실행화면 </br>
+#### CheckboxWinApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/checkboxwinapp.JPG "실행화면1") 
-#### ColorChangerApp 실행화면 </br>
+#### ColorChangerApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/colorchangerapp.JPG "실행화면2") 
 #### FlagWinApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/flagwinapp1.JPG "실행화면")
