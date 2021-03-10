@@ -9,13 +9,13 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 -------------------------------------
 ## PracticeWinApp
-CheckboxWinApp
-ColorChangerApp
-FlagWinApp
-LabelTestApp
-LoginApp
-MaskedTestApp
-PracticeWinApp
-RadioWinApp
+CheckboxWinApp </br>
+ColorChangerApp </br>
+FlagWinApp </br>
+LabelTestApp </br>
+LoginApp </br>
+MaskedTestApp </br>
+PracticeWinApp </br>
+RadioWinApp </br>
 
 -------------------------------------
