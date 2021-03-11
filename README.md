@@ -32,21 +32,21 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ### 3. ExerciseWinApp
 [ExerciseWinApp 전체소스](https://github.com/taekyom/StudyDesktopApp/tree/main/WinformApp/ExerciseWinApp)</br></br>
 
-#### DateCalApp</br>
+#### DateCalApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/datecalapp.JPG "실행화면")
-#### DigitalAlarmClockApp</br>
+#### DigitalAlarmClockApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalclockapp.JPG "실행화면")
-#### ListBoxWinApp</br>
+#### ListBoxWinApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/listboxapp1.JPG "실행화면1")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/listboxapp2.JPG "실행화면2")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/listboxapp3.JPG "실행화면3")
-#### ListViewApp</br>
+#### ListViewApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/listviewapp.JPG "실행화면")
-#### RestaurantSellApp</br>
+#### RestaurantSellApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/restaurantsellapp1.JPG "실행화면1")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/restaurantsellapp2.JPG "실행화면2")
-#### StudyHistoryApp</br>
+#### StudyHistoryApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/studyhistoyapp1.JPG "실행화면1")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/restaurantsellapp2.JPG "실행화면2")
-#### WishTravelApp</br>
+#### WishTravelApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wishtravelapp.JPG "실행화면")
