@@ -50,3 +50,9 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/studyhistoyapp2.JPG "실행화면2")
 #### WishTravelApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wishtravelapp.JPG "실행화면")
+#### DigitalClockApp 실행화면</br>
+![결과]( "실행화면")
+#### MoviePlayerApp 실행화면</br>
+![결과]("실행화면")
+#### MoviePlayerApp 실행화면</br>
+![결과]("실행화면")
