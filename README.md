@@ -30,4 +30,19 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 -------------------------------------
 ### 3. ExerciseWinApp
-[ExerciseWinApp 전체소스]
+[ExerciseWinApp 전체소스](https://github.com/taekyom/StudyDesktopApp/tree/main/WinformApp/ExerciseWinApp)</br></br>
+
+#### DateCalApp</br>
+![결과]("https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/datecalapp.JPG 실행화면")
+#### DigitalAlarmClockApp</br>
+![결과]("https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalclockapp.JPG 실행화면")
+#### ListBoxWinApp</br>
+![결과]("https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/listboxapp1.JPG실행화면")
+#### ListViewApp</br>
+![결과]("실행화면")
+#### RestaurantSellApp</br>
+![결과]("실행화면")
+#### StudyHistoryApp</br>
+![결과]("실행화면")
+#### WishTravelApp</br>
+![결과]("실행화면")
