@@ -91,7 +91,6 @@ Windows Media Player를 이용한 동영상 플레이어</br>
 Start Blinking을 누르면 1초에 한번씩 양쪽의 색이 번갈아가며 변경</br>
 Stop Blinking을 누르면 실행 종료</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/blinkerapp.JPG "실행화면")</br>
-
 #### BMICalApp 실행화면</br>
 키와 몸무게 입력 후 'BMI 계산'버튼을 누르면 아래에 BMI가 계산되어 출력</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/bmicalapp.JPG "실행화면")</br>
