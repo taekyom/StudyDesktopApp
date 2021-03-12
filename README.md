@@ -54,7 +54,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalalarmclockapp1.JPG "실행화면1")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalalarmclockapp2.JPG "실행화면2")
 #### MoviePlayerApp 실행화면</br>
-![결과]("실행화면")
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/movieplayerapp.JPG "실행화면")
 #### WpfLayoutApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wpflayoutapp.JPG "실행화면")
 #### BlinkerApp 실행화면</br>
