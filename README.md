@@ -51,8 +51,21 @@ C# 데스크톱 앱 개발 학습 리포지토리
 #### WishTravelApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wishtravelapp.JPG "실행화면")
 #### DigitalClockApp 실행화면</br>
-![결과]( "실행화면")
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalalarmclockapp1.JPG "실행화면1")
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/digitalalarmclockapp2.JPG "실행화면2")
 #### MoviePlayerApp 실행화면</br>
 ![결과]("실행화면")
-#### MoviePlayerApp 실행화면</br>
-![결과]("실행화면")
+#### WpfLayoutApp 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wpflayoutapp.JPG "실행화면")
+#### BlinkerApp 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/blinkerapp.JPG "실행화면")
+#### BMICalApp 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/bmicalapp.JPG "실행화면")
+#### HelloWpfApp 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/hellowpfapp1.JPG "실행화면1")
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/hellowpfapp2.JPG "실행화면1")
+#### SimpleGraphicEditor 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/simplegraphiceditor.JPG "실행화면")
+#### TextViewerApp 실행화면</br>
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/textviewerapp.JPG "실행화면")
+
