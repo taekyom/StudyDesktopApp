@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculatorApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="350">
+        Title="MainWindow" Height="405
+        " Width="350">
     <StackPanel>
         <TextBox x:Name="TxtResult" 
                  Height="60" FontSize="30" 
