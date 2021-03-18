@@ -39,7 +39,36 @@ namespace BookRentalShop
             frm.Width = this.ClientSize.Width - 1000;
             frm.Height = this.Height - menuStrip1.Height;
             frm.Show();
-            frm.WindowState = FormWindowState.Maximized;
+            frm.WindowState = FormWindowState.Normal;
+        }
+
+        private void MnuExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void InitChildForm(Form frm, string strTitle)
+        {
+            frm.Text = strTitle;
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Width = this.ClientSize.Width - 1000;
+            frm.Height = this.Height - menuStrip1.Height;
+            frm.Show();
+            frm.WindowState = FormWindowState.Normal;
+        }
+
+        private void MnuBooks_Click(object sender, EventArgs e)
+        {
+            FrmBooks frm = new FrmBooks();
+            InitChildForm(frm, "책관리");
+        }
+
+        private void MnuRental_Click(object sender, EventArgs e)
+        {
+            FrmRental frm = new FrmRental();
+            InitChildForm(frm, "대여관리");
         }
     }
 }

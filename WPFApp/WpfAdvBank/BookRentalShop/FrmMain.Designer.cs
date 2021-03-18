@@ -34,10 +34,10 @@ namespace BookRentalShop
             this.관리MToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.구분코드CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuMember = new System.Windows.Forms.ToolStripMenuItem();
-            this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuBooks = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.종료DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuRental = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@ namespace BookRentalShop
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.관리MToolStripMenuItem,
-            this.종료DToolStripMenuItem});
+            this.MnuExit});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(760, 24);
@@ -57,9 +57,9 @@ namespace BookRentalShop
             this.관리MToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.구분코드CToolStripMenuItem,
             this.MnuMember,
-            this.bToolStripMenuItem,
+            this.MnuBooks,
             this.toolStripSeparator1,
-            this.rToolStripMenuItem});
+            this.MnuRental});
             this.관리MToolStripMenuItem.Name = "관리MToolStripMenuItem";
             this.관리MToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.관리MToolStripMenuItem.Text = "관리(&M)";
@@ -76,28 +76,28 @@ namespace BookRentalShop
             this.MnuMember.Size = new System.Drawing.Size(180, 22);
             this.MnuMember.Text = "회원(&P)";
             // 
-            // bToolStripMenuItem
+            // MnuBooks
             // 
-            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
-            this.bToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bToolStripMenuItem.Text = "도서(&B)";
+            this.MnuBooks.Name = "MnuBooks";
+            this.MnuBooks.Size = new System.Drawing.Size(180, 22);
+            this.MnuBooks.Text = "도서(&B)";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
-            // rToolStripMenuItem
+            // MnuRental
             // 
-            this.rToolStripMenuItem.Name = "rToolStripMenuItem";
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rToolStripMenuItem.Text = "대여(&R)";
+            this.MnuRental.Name = "MnuRental";
+            this.MnuRental.Size = new System.Drawing.Size(180, 22);
+            this.MnuRental.Text = "대여(&R)";
             // 
-            // 종료DToolStripMenuItem
+            // MnuExit
             // 
-            this.종료DToolStripMenuItem.Name = "종료DToolStripMenuItem";
-            this.종료DToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.종료DToolStripMenuItem.Text = "종료(&D)";
+            this.MnuExit.Name = "MnuExit";
+            this.MnuExit.Size = new System.Drawing.Size(60, 20);
+            this.MnuExit.Text = "종료(&D)";
             // 
             // FrmMain
             // 
@@ -121,12 +121,12 @@ namespace BookRentalShop
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 관리MToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 종료DToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuExit;
         private System.Windows.Forms.ToolStripMenuItem 구분코드CToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuMember;
-        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuBooks;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuRental;
     }
 }
 
