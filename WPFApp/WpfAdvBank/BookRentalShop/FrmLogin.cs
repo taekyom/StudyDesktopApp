@@ -79,7 +79,7 @@ namespace BookRentalShop
                     {
                         var updatequery = $@"UPDATE membertbl SET 
                                              lastLoginDt = GETDATE()
-                                            ,logInAddr = '{BookRentalShopApp.Helper.Common.GetLocalIp()}'
+                                            ,logInIpAddr = '{BookRentalShopApp.Helper.Common.GetLocalIp()}'
                                              WHERE userID = '{strUserId}'"; //2) 로그인 정보 남기기
                         cmd.CommandText = updatequery; //3)
                         cmd.ExecuteNonQuery(); //4)

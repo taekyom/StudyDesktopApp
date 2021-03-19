@@ -43,87 +43,33 @@ namespace BookRentalShop
             if (e.RowIndex > -1) //-1 : 선택된 값이 없다
             {
                 var selData = DgvData.Rows[e.RowIndex];
-
-                AsignControls(selData);
-                
+                AsignToControls(selData);                
                 isNew = false; //수정
             }
-
         }
-
-        private void AsignControls(DataGridViewRow selData)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
-            TxtIdx.Text = selData.Cells[0].Value.ToString();
-            TxtAuthor.Text = selData.Cells[1].Value.ToString();
-            CboDivision.SelectedValue = selData.Cells[2].Value; //B001=B001
-            //seldata.cells[3] x
-
-            TxtBooks.Text = selData.Cells[3].Value.ToString();
-            //ReleaseDate
-            //TxtMobile.Text = selData.Cells[4].Value.ToString();
-            DtpReleaseDate.Value = (DateTime)selData.Cells[5].Value;
-            TxtISBN.Text = selData.Cells[6].Value.ToString();
-            TxtPrice.Text = selData.Cells[7].Value.ToString();
-            TxtDescription.Text = selData.Cells[8].Value.ToString();
-
-            TxtIdx.ReadOnly = true;
-        }
-
-        private void BtnDel_Click(object sender, EventArgs e)
-        {
-            //Validation
+            // Validation
             if (CheckValidation() == false) return;
+            // 삭제질문
+            if (MetroMessageBox.Show(this, "삭제하시겠습니까?", "삭제", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            if (MetroMessageBox.Show(this, "삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(BookRentalShopApp.Helper.Common.ConnString))
-                {
-                    if (conn.State == ConnectionState.Closed) conn.Open();
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-
-                    var query = "";
-
-                    query = "DELETE [dbo].[divtbl] " +
-                            " WHERE [Division] = @Division ";
-                    cmd.CommandText = query;
-
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
-                    pDivision.Value = TxtIdx.Text;
-                    cmd.Parameters.Add(pDivision);
-
-                    var result = cmd.ExecuteNonQuery();
-                    if (result == 1)
-                    {
-                        //저장 성공
-                        MetroMessageBox.Show(this, "삭제 성공", "저장",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        //저장 실패
-                        MetroMessageBox.Show(this, "삭제 실패", "저장",
-                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
-            }
+            DeleteData();
+            RefreshData();
+            ClearInputs();
         }
+
         private void BtnNew_Click(object sender, EventArgs e)
         {
             ClearInputs();
         }
+
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            //Validation 체크
+            // Validation 체크
             if (CheckValidation() == false) return;
+
             SaveData();
             RefreshData();
             ClearInputs();
@@ -155,7 +101,23 @@ namespace BookRentalShop
             }
             catch{ }
         }
+        private void AsignToControls(DataGridViewRow selData)
+        {
+            TxtIdx.Text = selData.Cells[0].Value.ToString();
+            TxtAuthor.Text = selData.Cells[1].Value.ToString();
+            CboDivision.SelectedValue = selData.Cells[2].Value; // B001 = B001
+            // selData.Cells[3] X
+            TxtBooks.Text = selData.Cells[4].Value.ToString();
+            // ReleaseDate
+            DtpReleaseDate.Value = (DateTime)selData.Cells[5].Value;
+            TxtISBN.Text = selData.Cells[6].Value.ToString();
+            TxtPrice.Text = selData.Cells[7].Value.ToString();
+            TxtDescription.Text = selData.Cells[8].Value.ToString();
 
+            TxtIdx.ReadOnly = true;
+        }
+
+        //삭제처리 프로세스
         private void DeleteData()
         {
             try
@@ -166,18 +128,31 @@ namespace BookRentalShop
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
 
-                    var query = "";
-
-                    query = @"DELETE FROM [dbo].[bookstbl] " +
-                             " WHERE [Idx] = @Idx ";
+                    var query = @"DELETE FROM [dbo].[bookstbl] 
+                                   WHERE [Idx] = @Idx ";
                     cmd.CommandText = query;
 
+                    var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
+                    pIdx.Value = TxtIdx.Text;
+                    cmd.Parameters.Add(pIdx);
+
+                    var result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        MetroMessageBox.Show(this, "삭제 성공", "삭제",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "삭제 실패", "삭제",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void RefreshData()
@@ -210,8 +185,8 @@ namespace BookRentalShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //데이터 그리드뷰 컬럼(Division) 화면에서 안 보이게
@@ -227,6 +202,7 @@ namespace BookRentalShop
             column = DgvData.Columns[0]; //Idx
             column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
+
         //입력(수정)처리 프로세스
         private void SaveData()
         {
@@ -287,7 +263,7 @@ namespace BookRentalShop
                     cmd.Parameters.Add(pNames);
 
                     var pReleaseDate = new SqlParameter("@ReleaseDate", SqlDbType.Date);
-                    pReleaseDate.Value = TxtBooks.Text;
+                    pReleaseDate.Value = DtpReleaseDate.Value;
                     cmd.Parameters.Add(pReleaseDate);
 
                     var pISBN = new SqlParameter("@ISBN", SqlDbType.VarChar, 200);
@@ -299,10 +275,10 @@ namespace BookRentalShop
                     cmd.Parameters.Add(pPrice);
 
                     var pDescriptions = new SqlParameter("@Descriptions", SqlDbType.NVarChar);
-                    pDescriptions.Value = TxtPrice.Text;
+                    pDescriptions.Value = BookRentalShopApp.Helper.Common.ReplaceCmdText(TxtPrice.Text);
                     cmd.Parameters.Add(pDescriptions);
 
-                    if (isNew == false) //update일 때만 처리;
+                    if (isNew == false) //update일 때만 처리
                     {
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = TxtIdx.Text;
@@ -330,12 +306,14 @@ namespace BookRentalShop
                        MessageBoxIcon.Error);
             }
         }
+
         //입력값 유효성 체크 메서드
         private bool CheckValidation()
         {
             if (string.IsNullOrEmpty(TxtAuthor.Text) ||
                 string.IsNullOrEmpty(TxtBooks.Text) ||
-                CboDivision.SelectedIndex == -1 ||)
+                CboDivision.SelectedIndex == -1 ||
+                DtpReleaseDate.Value == null)
             {
                 MetroMessageBox.Show(this, "빈 값은 처리할 수 없습니다.", "경고",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -346,10 +324,10 @@ namespace BookRentalShop
         private void ClearInputs()
         {
             TxtIdx.Text = TxtAuthor.Text = "";
-            //TxtMobile.Text = TxtBooks.Text = TxtISBN.Text = "";
+            TxtBooks.Text = TxtISBN.Text = "";
             TxtPrice.Text = TxtDescription.Text = "";
-            CboDivision.SelectedIndex = -1;
-            DtpReleaseDate.Value = DateTime.Now; //오늘 날짜로 초기화
+            CboDivision.SelectedIndex = -1; // 
+            DtpReleaseDate.Value = DateTime.Now; // 오늘 날짜로 초기화
             TxtIdx.ReadOnly = true;
             isNew = true;
         }

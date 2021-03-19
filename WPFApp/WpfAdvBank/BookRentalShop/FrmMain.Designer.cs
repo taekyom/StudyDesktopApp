@@ -48,7 +48,7 @@ namespace BookRentalShop
             this.MnuExit});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(760, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(810, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -81,6 +81,7 @@ namespace BookRentalShop
             this.MnuBooks.Name = "MnuBooks";
             this.MnuBooks.Size = new System.Drawing.Size(180, 22);
             this.MnuBooks.Text = "도서(&B)";
+            this.MnuBooks.Click += new System.EventHandler(this.MnuBooks_Click);
             // 
             // toolStripSeparator1
             // 
@@ -92,23 +93,27 @@ namespace BookRentalShop
             this.MnuRental.Name = "MnuRental";
             this.MnuRental.Size = new System.Drawing.Size(180, 22);
             this.MnuRental.Text = "대여(&R)";
+            this.MnuRental.Click += new System.EventHandler(this.MnuRental_Click_1);
             // 
             // MnuExit
             // 
             this.MnuExit.Name = "MnuExit";
             this.MnuExit.Size = new System.Drawing.Size(60, 20);
             this.MnuExit.Text = "종료(&D)";
+            this.MnuExit.Click += new System.EventHandler(this.MnuExit_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(850, 534);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "책 대여점 프로그램";
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Shown += new System.EventHandler(this.FrmMain_Shown);
             this.menuStrip1.ResumeLayout(false);

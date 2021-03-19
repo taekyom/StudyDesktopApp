@@ -126,7 +126,6 @@ namespace BookRentalShop
             this.BtnDel.TabIndex = 9;
             this.BtnDel.Text = "삭제";
             this.BtnDel.UseSelectable = true;
-            this.BtnDel.Click += new System.EventHandler(this.BtnDel_Click);
             // 
             // TxtDescription
             // 

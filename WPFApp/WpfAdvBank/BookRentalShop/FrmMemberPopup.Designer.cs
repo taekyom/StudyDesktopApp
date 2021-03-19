@@ -46,7 +46,6 @@ namespace BookRentalShop
             this.DgvData.RowTemplate.Height = 23;
             this.DgvData.Size = new System.Drawing.Size(489, 265);
             this.DgvData.TabIndex = 1;
-            this.DgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellClick);
             // 
             // BtnSelect
             // 
@@ -56,6 +55,7 @@ namespace BookRentalShop
             this.BtnSelect.TabIndex = 2;
             this.BtnSelect.Text = "선택";
             this.BtnSelect.UseSelectable = true;
+            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // BtnCancel
             // 

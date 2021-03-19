@@ -16,6 +16,10 @@ namespace BookRentalShop
     public partial class FrmMemberPopup : MetroForm
     {
         #region 전역변수 영역
+        public int SelIdx { get; set; }
+
+        public string selName { get; set; }
+
         #endregion
 
         #region 이벤트 영역
@@ -30,11 +34,7 @@ namespace BookRentalShop
         private void FrmDivCode_Resize(object sender, EventArgs e)
         {
         }
-        private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-      
+       
         #endregion
 
         #region 커스텀 메서드 영역
@@ -67,11 +67,29 @@ namespace BookRentalShop
                 MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         #endregion
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void BtnSelect_Click(object sender, EventArgs e)
+        {
+            if (DgvData.SelectedRows.Count == 0)
+            {
+                MetroMessageBox.Show(this, "데이터를 선택하세요", "경고",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SelIdx = (int)DgvData.SelectedRows[0].Cells[0].Value;
+            selName = DgvData.SelectedRows[0].Cells[1].Value.ToString();
+
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

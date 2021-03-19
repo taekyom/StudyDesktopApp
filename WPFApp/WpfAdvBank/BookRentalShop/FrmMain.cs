@@ -33,15 +33,21 @@ namespace BookRentalShop
         private void MnuMember_Click(object sender, EventArgs e)
         {
             FrmMember frm = new FrmMember();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Width = this.ClientSize.Width - 1000;
-            frm.Height = this.Height - menuStrip1.Height;
-            frm.Show();
-            frm.WindowState = FormWindowState.Normal;
+            InitChildForm(frm, "회원관리");
         }
-
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MetroMessageBox.Show(this, "종료하시겠습니까?", "종료",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true; // 프로그램 종료 안함.
+            }
+        }
         private void MnuExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -56,16 +62,22 @@ namespace BookRentalShop
             frm.Width = this.ClientSize.Width - 1000;
             frm.Height = this.Height - menuStrip1.Height;
             frm.Show();
-            frm.WindowState = FormWindowState.Normal;
+            frm.WindowState = FormWindowState.Maximized;
         }
-
+        private void MnuDivCode_Click(object sender, EventArgs e)
+        {
+            FrmDivCode frm = new FrmDivCode();
+            InitChildForm(frm, "구분코드 관리");
+        }
         private void MnuBooks_Click(object sender, EventArgs e)
         {
             FrmBooks frm = new FrmBooks();
             InitChildForm(frm, "책관리");
         }
 
-        private void MnuRental_Click(object sender, EventArgs e)
+        
+
+        private void MnuRental_Click_1(object sender, EventArgs e)
         {
             FrmRental frm = new FrmRental();
             InitChildForm(frm, "대여관리");

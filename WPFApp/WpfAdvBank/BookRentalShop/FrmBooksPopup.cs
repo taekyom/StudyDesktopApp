@@ -31,7 +31,11 @@ namespace BookRentalShop
             RefreshData(); //테이블 조회
         }
          
-        private void BtnNew_Click(object sender, EventArgs e)
+        private void FrmDivCode_Resize(object sender, EventArgs e)
+        {
+
+        }
+        private void DgvData_CellClick(object sender, EventArgs e)
         {
 
         }
@@ -73,6 +77,19 @@ namespace BookRentalShop
                 MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+
+            // 데이터그리드뷰 컬럼 화면에서 안보이게
+            var column = DgvData.Columns[2]; // Division 컬럼
+            column.Visible = false;
+
+            column = DgvData.Columns[4];
+            column.Width = 250;
+            column.HeaderText = "도서명";
+
+            column = DgvData.Columns[0]; // Idx
+            column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         #endregion
@@ -86,7 +103,10 @@ namespace BookRentalShop
                 return;
             }
             SelIdx = (int)DgvData.SelectedRows[0].Cells[0].Value;
-            SelName = DgvData.SelectedRows[0].Cells[0].ToString();
+            SelName = DgvData.SelectedRows[0].Cells[4].ToString();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
        

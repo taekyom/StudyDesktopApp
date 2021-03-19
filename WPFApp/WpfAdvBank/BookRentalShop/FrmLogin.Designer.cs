@@ -86,7 +86,7 @@ namespace BookRentalShop
             this.TxtPassword.Location = new System.Drawing.Point(139, 131);
             this.TxtPassword.MaxLength = 32767;
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.PasswordChar = '\0';
+            this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtPassword.SelectedText = "";
             this.TxtPassword.SelectionLength = 0;

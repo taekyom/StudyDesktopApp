@@ -41,7 +41,7 @@ namespace BookRentalShop
                 var selData = DgvData.Rows[e.RowIndex];
                 TxtIdx.Text = selData.Cells[0].Value.ToString();
                 TxtNames.Text = selData.Cells[1].Value.ToString();
-                //CboLevel.Text = 
+                CboLevel.SelectedItem = selData.Cells[2].Value;
 
                 TxtAddr.Text = selData.Cells[3].Value.ToString();
                 TxtMobile.Text = selData.Cells[4].Value.ToString();
@@ -61,46 +61,13 @@ namespace BookRentalShop
 
             if (MetroMessageBox.Show(this, "삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(BookRentalShopApp.Helper.Common.ConnString))
-                {
-                    if (conn.State == ConnectionState.Closed) conn.Open();
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-
-                    var query = "";
-
-                    query = "DELETE [dbo].[divtbl] " +
-                            " WHERE [Division] = @Division ";
-                    cmd.CommandText = query;
-
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
-                    pDivision.Value = TxtIdx.Text;
-                    cmd.Parameters.Add(pDivision);
-
-                    var result = cmd.ExecuteNonQuery();
-                    if (result == 1)
-                    {
-                        //저장 성공
-                        MetroMessageBox.Show(this, "삭제 성공", "저장",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        //저장 실패
-                        MetroMessageBox.Show(this, "삭제 실패", "저장",
-                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
-            }
+            DeleteData();
+            RefreshData();
+            ClearInputs();
         }
+
+      
+        
         private void BtnNew_Click(object sender, EventArgs e)
         {
             ClearInputs();
@@ -129,15 +96,34 @@ namespace BookRentalShop
 
                     var query = "";
 
-                    query = "";
+                    query = "DELETE FROM [dbo].[membertbl] " +
+                              " WHERE [Idx] = @Idx ";
                     cmd.CommandText = query;
+
+                    var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
+                    pIdx.Value = TxtIdx.Text;
+                    cmd.Parameters.Add(pIdx);
+
+                    var result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        MetroMessageBox.Show(this, "삭제 성공", "삭제",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "삭제 실패", "삭제",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
 
                 }
             }
             catch (Exception ex)
             {
 
-                throw;
+                MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
+                     MessageBoxIcon.Error);
             }
         }
         private void RefreshData()
@@ -155,7 +141,6 @@ namespace BookRentalShop
                                         ,[Mobile]
                                         ,[Email]
                                         ,[userID]
-                                        ,[passwords]
                                         ,[lastLoginDt]
                                         ,[loginIpAddr]
                                     FROM [dbo].[membertbl]";
@@ -189,9 +174,22 @@ namespace BookRentalShop
 
                     if (isNew == true) //insert
                     {
-                        query = "INSERT INTO dbo.divtbl " +
-                                " VALUES " +
-                                " (@Division, @Names) ";
+                        query = @"INSERT INTO [dbo].[membertbl]
+                                       ([Names]
+                                       ,[Levels]
+                                       ,[Addr]
+                                       ,[Mobile]
+                                       ,[Email]
+                                       ,[userID]
+                                       ,[passwords])
+                                 VALUES
+                                       (@Names
+                                       ,@Levels
+                                       ,@Addr
+                                       ,@Mobile
+                                       ,@Email
+                                       ,@userID
+                                       ,@passwords) ";
                     }
                     else //update
                     {
@@ -266,9 +264,9 @@ namespace BookRentalShop
         //입력값 유효성 체크 메서드
         private bool CheckValidation()
         {
-            if (string.IsNullOrEmpty(TxtIdx.Text) || string.IsNullOrEmpty(TxtNames.Text) ||
-                string.IsNullOrEmpty(TxtAddr.Text) || string.IsNullOrEmpty(TxtEmail.Text) ||
-                string.IsNullOrEmpty(TxtMobile.Text) || CboLevel.SelectedIndex == -1 ||
+            if(string.IsNullOrEmpty(TxtNames.Text) ||
+                string.IsNullOrEmpty(TxtAddr.Text) || string.IsNullOrEmpty(TxtMobile.Text) ||
+                string.IsNullOrEmpty(TxtEmail.Text) || CboLevel.SelectedIndex == -1 ||
                 string.IsNullOrEmpty(TxtUserId.Text))
             {
                 MetroMessageBox.Show(this, "빈 값은 처리할 수 없습니다.", "경고",
