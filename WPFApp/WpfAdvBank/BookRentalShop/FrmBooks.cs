@@ -85,7 +85,7 @@ namespace BookRentalShop
                 using (SqlConnection conn = new SqlConnection(BookRentalShopApp.Helper.Common.ConnString))
                 {
                     if (conn.State == ConnectionState.Closed) conn.Open();
-                    var query = "SELECT Division, Names FROM dbo.divtbl";
+                    var query = "SELECT division, names FROM dbo.divtbl";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
                     var temp = new Dictionary<string, string>();
@@ -165,14 +165,14 @@ namespace BookRentalShop
 
                     var query = @"SELECT b.IDX
                                       ,b.AUTHOR
-                                      ,b.DIVISION
+                                      ,b.division
 	                                  ,d.names as DivName
                                       ,b.NAMES
                                       ,b.RELEASEDATE
                                       ,b.ISBN
                                       ,b.PRICE
                                       ,b.Descriptions
-                                  FROM DBO.BOOKSTBL as b
+                                  FROM dbo.bookstbl as b
                                   inner join dbo.divtbl as d
 	                                on b.division = d.division"; //210318 descriptions 컬럼 추가
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);

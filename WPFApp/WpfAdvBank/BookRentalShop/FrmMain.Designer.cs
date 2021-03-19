@@ -69,12 +69,14 @@ namespace BookRentalShop
             this.구분코드CToolStripMenuItem.Name = "구분코드CToolStripMenuItem";
             this.구분코드CToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.구분코드CToolStripMenuItem.Text = "구분코드(&C)";
+            this.구분코드CToolStripMenuItem.Click += new System.EventHandler(this.MnuDivCode_Click);
             // 
             // MnuMember
             // 
             this.MnuMember.Name = "MnuMember";
             this.MnuMember.Size = new System.Drawing.Size(180, 22);
             this.MnuMember.Text = "회원(&P)";
+            this.MnuMember.Click += new System.EventHandler(this.MnuMember_Click);
             // 
             // MnuBooks
             // 
@@ -114,6 +116,7 @@ namespace BookRentalShop
             this.Name = "FrmMain";
             this.Text = "책 대여점 프로그램";
             this.TransparencyKey = System.Drawing.Color.Empty;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Shown += new System.EventHandler(this.FrmMain_Shown);
             this.menuStrip1.ResumeLayout(false);

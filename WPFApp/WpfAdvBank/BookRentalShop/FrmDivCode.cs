@@ -66,10 +66,10 @@ namespace BookRentalShop
                     var query = "";
 
                     query = "DELETE [dbo].[divtbl] " +
-                            " WHERE [Division] = @Division ";
+                            " WHERE [division] = @division ";
                     cmd.CommandText = query;
 
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
+                    SqlParameter pDivision = new SqlParameter("@division", SqlDbType.VarChar, 8);
                     pDivision.Value = TxtDivision.Text;
                     cmd.Parameters.Add(pDivision);
 
@@ -157,26 +157,26 @@ namespace BookRentalShop
                     {
                         query = "INSERT INTO dbo.divtbl " +
                                 " VALUES " +
-                                " (@Division, @Names) ";
+                                " (@division, @Names) ";
                     }
                     else //update
                     {
                         query = "UPDATE [dbo].[divtbl] " +
                                 "   SET [Names] = @Names " +
-                                " WHERE [Division] = @Division ";
+                                " WHERE [division] = @division ";
                     }
                     cmd.CommandText = query;
 
                     query = "UPDATE [dbo].[divtbl] " +
                             "   SET [Names] = @Names " +
-                            " WHERE [Division] = @Division ";
+                            " WHERE [division] = @division ";
                     cmd.CommandText = query;
 
                     SqlParameter pNames = new SqlParameter("@Names", SqlDbType.NVarChar, 45);
                     pNames.Value = TxtNames.Text;
                     cmd.Parameters.Add(pNames);
 
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
+                    SqlParameter pDivision = new SqlParameter("@division", SqlDbType.VarChar, 8);
                     pDivision.Value = TxtDivision.Text;
                     cmd.Parameters.Add(pDivision);
 

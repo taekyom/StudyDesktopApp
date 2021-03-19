@@ -74,9 +74,6 @@ namespace BookRentalShop
             FrmBooks frm = new FrmBooks();
             InitChildForm(frm, "책관리");
         }
-
-        
-
         private void MnuRental_Click_1(object sender, EventArgs e)
         {
             FrmRental frm = new FrmRental();
