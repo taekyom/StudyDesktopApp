@@ -11,13 +11,8 @@
     mc:Ignorable="d"
     Title="MainWindow" 
     Height="450" 
-    Width="800"
-    WindowStartupLocation="CenterScreen"
-    ResizeMode="CanResizeWithGrip"
-    GlowBrush="{DynamicResource MahApps.Brushes.Accent}">
+    Width="800">
     <Grid>
-        <Ellipse Width="100" Height="100" Fill="CadetBlue" Stroke="Black" StrokeThickness="5"/>
-        <Rectangle Width="100" Height="100" Fill="IndianRed" Stroke="Black" StrokeThickness="5" Margin="500,160,160,160"/>
-        <Button Content="Click"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Source="/WpfPracticeApp;component/MainMenu.xaml"/>
     </Grid>
 </mah:MetroWindow>
