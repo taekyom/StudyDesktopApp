@@ -29,16 +29,65 @@ namespace IoTSensorMonApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.시뮬레이션SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.읽어오기OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.저장하기SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Form1
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.파일FToolStripMenuItem,
+            this.시뮬레이션SToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(452, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 파일FToolStripMenuItem
+            // 
+            this.파일FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.읽어오기OToolStripMenuItem,
+            this.저장하기SToolStripMenuItem});
+            this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
+            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.파일FToolStripMenuItem.Text = "파일(&F)";
+            // 
+            // 시뮬레이션SToolStripMenuItem
+            // 
+            this.시뮬레이션SToolStripMenuItem.Name = "시뮬레이션SToolStripMenuItem";
+            this.시뮬레이션SToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.시뮬레이션SToolStripMenuItem.Text = "시뮬레이션(&S)";
+            // 
+            // 읽어오기OToolStripMenuItem
+            // 
+            this.읽어오기OToolStripMenuItem.Name = "읽어오기OToolStripMenuItem";
+            this.읽어오기OToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.읽어오기OToolStripMenuItem.Text = "읽어오기(&O)";
+            // 
+            // 저장하기SToolStripMenuItem
+            // 
+            this.저장하기SToolStripMenuItem.Name = "저장하기SToolStripMenuItem";
+            this.저장하기SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.저장하기SToolStripMenuItem.Text = "저장하기(&S)";
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 399);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(452, 496);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "FrmMain";
+            this.Text = "IoTSensorMonApp";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -46,28 +95,9 @@ namespace IoTSensorMonApp
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 파일FToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MnuLoadFile;
-        private System.Windows.Forms.ToolStripMenuItem MnuSaveFile;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem MnuExit;
-        private System.Windows.Forms.ToolStripMenuItem 시뮬레이션ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MnuBeginSimulation;
-        private System.Windows.Forms.ToolStripMenuItem MnuEndSimulation;
-        private System.Windows.Forms.Label LblConnectTime;
-        private System.Windows.Forms.TextBox TxtSensorNum;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ProgressBar PrbPhotoResistor;
-        private System.Windows.Forms.ListBox LsbPhotoResistors;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BtnDisplay;
-        private System.Windows.Forms.Button BtnDisconnect;
-        private System.Windows.Forms.Button BtnConnect;
-        private System.Windows.Forms.ComboBox CboSerialPort;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChtPhotoResistors;
-        private System.Windows.Forms.Button BtnViewAll;
-        private System.Windows.Forms.Button BtnZoom;
+        private System.Windows.Forms.ToolStripMenuItem 읽어오기OToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 저장하기SToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 시뮬레이션SToolStripMenuItem;
     }
 }
 
