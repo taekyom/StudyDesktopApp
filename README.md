@@ -134,6 +134,8 @@ Stop Blinking을 누르면 실행 종료</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp2.JPG "실행화면2")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp3.JPG "실행화면3")
 
-### WpfCalculatorApp
+### SnakeBiteGame 실행화면</br>
+
+### WpfCalculatorApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/wpfcalculatorapp.JPG "실행화면")
 
