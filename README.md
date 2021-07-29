@@ -131,7 +131,7 @@ Stop Blinking을 누르면 실행 종료</br>
 ### MyNoteApp 실행화면</br>
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp.JPG "실행화면1")
 ![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp2.JPG "실행화면2")
-![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp3.JPG "실행화면3")
+![결과](https://github.com/taekyom/StudyDesktopApp/blob/main/WinformApp/ref_images/mynotepadapp3.JPG "실행화면3")<br/>
 [SnakeBiteGame 전체소스](https://github.com/taekyom/StudyDesktopApp/tree/main/WPFApp/WpfExecutiveBank/SnakeBiteGame)<br/>
 
 ### WpfCalculatorApp 실행화면</br>
