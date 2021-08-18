@@ -92,5 +92,10 @@ namespace BookRentalShop
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

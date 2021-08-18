@@ -22,7 +22,8 @@ namespace BookRentalShop
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            TxtUserId.Focus();
+            this.Activate();    // 실행했을때 포커스를 잡아주고 바로 키보드 입력가능하게 만들어줌.
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -53,10 +54,12 @@ namespace BookRentalShop
                     SqlCommand cmd = new SqlCommand(query, conn);
                     
                     // SQLInjection 해킹 막기위해서 사용
+                    // 아이디 처리
                     SqlParameter pUserID = new SqlParameter("@userId", SqlDbType.VarChar, 20);
                     pUserID.Value = TxtUserId.Text;
                     cmd.Parameters.Add(pUserID);
 
+                    // 비밀번호 처리 
                     SqlParameter pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 20);
                     pPasswords.Value = TxtPassword.Text;
                     cmd.Parameters.Add(pPasswords);
@@ -66,8 +69,8 @@ namespace BookRentalShop
                     
                     // reader로 처리
                     reader.Read();
-                    strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";
-                    reader.Close(); //1)
+                    strUserId = reader["userID"] != null ? reader["userID"].ToString() : ""; // strUserId가 null이 아니면 문자열형태로 그대로 넣고 아니면 빈값을 넣음
+                    reader.Close(); //1
                     
                     // 확인 MessageBox.Show(strUserId);
                     if (string.IsNullOrEmpty(strUserId))

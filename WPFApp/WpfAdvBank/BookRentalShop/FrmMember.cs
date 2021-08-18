@@ -32,7 +32,7 @@ namespace BookRentalShop
         private void FrmDivCode_Resize(object sender, EventArgs e)
         {
             DgvData.Height = this.ClientRectangle.Height - 90;
-            groupBox1.Height = this.ClientRectangle.Height - 90;
+            GrbDetail.Height = this.ClientRectangle.Height - 90;
         }
         private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -2,13 +2,8 @@
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookRentalShop
@@ -35,15 +30,18 @@ namespace BookRentalShop
         {
 
         }
-        private void DgvData_CellClick(object sender, EventArgs e)
+        private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex > -1) // 선택된 값이 존재하면
+            {
+                var selData = DgvData.Rows[e.RowIndex];
+            }
         }
         
         #endregion
 
         #region 커스텀 메서드 영역
-        //삭제처리 프로세스     
+        //데이터가 변경될 때마다 실행시켜서 새로운 데이터를 보여줌     
         private void RefreshData()
         {
             try

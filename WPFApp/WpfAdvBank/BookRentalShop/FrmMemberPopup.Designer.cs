@@ -40,29 +40,31 @@ namespace BookRentalShop
             this.DgvData.AllowUserToAddRows = false;
             this.DgvData.AllowUserToDeleteRows = false;
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvData.Location = new System.Drawing.Point(23, 63);
+            this.DgvData.Location = new System.Drawing.Point(23, 77);
             this.DgvData.Name = "DgvData";
             this.DgvData.ReadOnly = true;
             this.DgvData.RowTemplate.Height = 23;
-            this.DgvData.Size = new System.Drawing.Size(489, 265);
+            this.DgvData.Size = new System.Drawing.Size(458, 244);
             this.DgvData.TabIndex = 1;
             // 
             // BtnSelect
             // 
-            this.BtnSelect.Location = new System.Drawing.Point(380, 334);
+            this.BtnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSelect.Location = new System.Drawing.Point(305, 336);
             this.BtnSelect.Name = "BtnSelect";
-            this.BtnSelect.Size = new System.Drawing.Size(63, 33);
-            this.BtnSelect.TabIndex = 2;
+            this.BtnSelect.Size = new System.Drawing.Size(85, 39);
+            this.BtnSelect.TabIndex = 10;
             this.BtnSelect.Text = "선택";
             this.BtnSelect.UseSelectable = true;
             this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(449, 334);
+            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancel.Location = new System.Drawing.Point(396, 336);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(63, 33);
-            this.BtnCancel.TabIndex = 2;
+            this.BtnCancel.Size = new System.Drawing.Size(85, 39);
+            this.BtnCancel.TabIndex = 11;
             this.BtnCancel.Text = "취소";
             this.BtnCancel.UseSelectable = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -72,16 +74,17 @@ namespace BookRentalShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(540, 390);
+            this.ClientSize = new System.Drawing.Size(511, 389);
             this.ControlBox = false;
+            this.Controls.Add(this.DgvData);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSelect);
-            this.Controls.Add(this.DgvData);
             this.Name = "FrmMemberPopup";
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "회원 리스트";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
+            this.Resize += new System.EventHandler(this.FrmDivCode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.ResumeLayout(false);
 

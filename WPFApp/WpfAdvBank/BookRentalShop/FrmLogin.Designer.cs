@@ -119,7 +119,6 @@ namespace BookRentalShop
             // 
             // BtnLogin
             // 
-            this.BtnLogin.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.BtnLogin.Location = new System.Drawing.Point(71, 217);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(91, 51);

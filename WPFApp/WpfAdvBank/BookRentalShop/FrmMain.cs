@@ -19,11 +19,6 @@ namespace BookRentalShop
             InitializeComponent();  
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmMain_Shown(object sender, EventArgs e)
         {
             FrmLogin frm = new FrmLogin();
@@ -40,7 +35,7 @@ namespace BookRentalShop
             if (MetroMessageBox.Show(this, "종료하시겠습니까?", "종료",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                e.Cancel = false;
+                e.Cancel = false; //yes 누르면 프로그램 종료
                 Environment.Exit(0);
             }
             else
@@ -57,12 +52,13 @@ namespace BookRentalShop
         {
             frm.Text = strTitle;
             frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;
+            frm.MdiParent = this; //this는 FrmMain
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Width = this.ClientSize.Width - 1000;
             frm.Height = this.Height - menuStrip1.Height;
             frm.Show();
             frm.WindowState = FormWindowState.Maximized;
+            frm.StartPosition = FormStartPosition.Manual;
         }
         private void MnuDivCode_Click(object sender, EventArgs e)
         {
@@ -78,6 +74,11 @@ namespace BookRentalShop
         {
             FrmRental frm = new FrmRental();
             InitChildForm(frm, "대여관리");
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,7 +37,7 @@ namespace BookRentalShop
         private void FrmDivCode_Resize(object sender, EventArgs e)
         {
             DgvData.Height = this.ClientRectangle.Height - 90;
-            groupBox1.Height = this.ClientRectangle.Height - 90;
+            GrbDetail.Height = this.ClientRectangle.Height - 90;
         }
         private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -49,6 +49,21 @@ namespace BookRentalShop
                 BtnSearchBook.Enabled = BtnSearchMember.Enabled = false;
                 DtpRentaldate.Enabled = false;
             }
+        }
+
+        private void AsignControls(DataGridViewRow selData)
+        {
+            TxtIdx.Text = selData.Cells[0].Value.ToString();
+            selMemberIdx = (int)selData.Cells[1].Value;
+            Debug.WriteLine($">>>> selMemberIdx : {selMemberIdx}");
+            TxtMemberName.Text = selData.Cells[2].Value.ToString();
+            selBookIdx = (int)selData.Cells[3].Value;
+            TxtBookName.Text = selData.Cells[4].Value.ToString();
+            Debug.WriteLine($">>>> selBookIdx : {selBookIdx}");
+            DtpRentaldate.Value = (DateTime)selData.Cells[5].Value;
+            TxtReturnDate.Text = selData.Cells[6].Value == null ? "" : selData.Cells[6].Value.ToString();   // null값 대체가 어려워서 DateTime버리고 TextBox로 대체했음
+            CboRentalState.SelectedValue = selData.Cells[7].Value;
+            TxtIdx.ReadOnly = true;
         }
         private void BtnNew_Click(object sender, EventArgs e)
         {
@@ -92,19 +107,6 @@ namespace BookRentalShop
                 CboRentalState.SelectedIndex = -1;
             }
             catch{ }
-        }
-        private void AsignControls(DataGridViewRow selData)
-        {
-            TxtIdx.Text = selData.Cells[0].Value.ToString();
-            selMemberIdx = (int)selData.Cells[1].Value;
-            Debug.WriteLine($">>>> selMemberIdx : {selMemberIdx}");
-            TxtMemberName.Text = selData.Cells[2].Value.ToString();
-            selBookIdx = (int)selData.Cells[3].Value;
-            Debug.WriteLine($">>>> selBookIdx : {selBookIdx}");
-            TxtBookName.Text = selData.Cells[4].Value.ToString();
-            DtpRentaldate.Value = (DateTime)selData.Cells[5].Value;
-            TxtReturnDate.Text = selData.Cells[6].Value == null ? "" : selData.Cells[6].Value.ToString();
-            CboRentalState.SelectedValue = selData.Cells[7].Value;
         }
         private void DeleteData()
         {
@@ -314,19 +316,20 @@ namespace BookRentalShop
 
         private int selBookIdx = 0;
         private string selBookName = "";
-        private int selMemberIdx = 0; // 선택된 회원번호
-        private string selMemberName = ""; // 선택된 회원이름
-
         private void BtnSearchMember_Click(object sender, EventArgs e)
         {
             FrmMemberPopup frm = new FrmMemberPopup();
             frm.StartPosition = FormStartPosition.CenterParent;
-            if(frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 selMemberIdx = frm.SelIdx;
                 TxtMemberName.Text = selMemberName = frm.selName;
             }
         }
+
+
+        private int selMemberIdx = 0; // 선택된 회원번호
+        private string selMemberName = ""; // 선택된 회원이름
         private void BtnSearchBook_Click(object sender, EventArgs e)
         {
             FrmBooksPopup frm = new FrmBooksPopup();

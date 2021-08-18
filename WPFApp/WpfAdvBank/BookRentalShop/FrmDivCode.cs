@@ -32,7 +32,7 @@ namespace BookRentalShop
         private void FrmDivCode_Resize(object sender, EventArgs e)
         {
             DgvData.Height = this.ClientRectangle.Height - 90;
-            groupBox1.Height = this.ClientRectangle.Height - 90;
+            GrbDetail.Height = this.ClientRectangle.Height - 90;
         }
         private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -49,50 +49,15 @@ namespace BookRentalShop
         }
         private void BtnDel_Click(object sender, EventArgs e)
         {
-            //Validation
+            // validation
             if (CheckValidation() == false) return;
 
-            if (MetroMessageBox.Show(this, "삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+            if (MetroMessageBox.Show(this, "삭제하시겠습니까?", "삭제",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(BookRentalShopApp.Helper.Common.ConnString))
-                {
-                    if (conn.State == ConnectionState.Closed) conn.Open();
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-
-                    var query = "";
-
-                    query = "DELETE [dbo].[divtbl] " +
-                            " WHERE [division] = @division ";
-                    cmd.CommandText = query;
-
-                    SqlParameter pDivision = new SqlParameter("@division", SqlDbType.VarChar, 8);
-                    pDivision.Value = TxtDivision.Text;
-                    cmd.Parameters.Add(pDivision);
-
-                    var result = cmd.ExecuteNonQuery();
-                    if (result == 1)
-                    {
-                        //저장 성공
-                        MetroMessageBox.Show(this, "삭제 성공", "저장",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        //저장 실패
-                        MetroMessageBox.Show(this, "삭제 실패", "저장",
-                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
-            }
+            DeleteData();
+            RefreshData();
+            ClearInputs();
         }
         private void BtnNew_Click(object sender, EventArgs e)
         {
@@ -112,7 +77,39 @@ namespace BookRentalShop
         //삭제처리 프로세스
         private void DeleteData()
         {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(BookRentalShopApp.Helper.Common.ConnString))
+                {
+                    if (conn.State == ConnectionState.Closed) conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
 
+                    var query = "";
+                    query = "DELETE FROM [dbo].[divtbl] " +
+                            " WHERE [Division] = @Division";
+
+                    cmd.CommandText = query;
+
+                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.NVarChar, 8);
+                    pDivision.Value = TxtDivision.Text;
+                    cmd.Parameters.Add(pDivision);
+
+                    var result = cmd.ExecuteNonQuery();  // 잘 실행되면 1반환, 안되면 0 반환
+                    if (result == 1)
+                    {
+                        MetroMessageBox.Show(this, "삭제성공", "저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "삭제실패", "저장", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void RefreshData()
         {
@@ -122,7 +119,7 @@ namespace BookRentalShop
                 {
                     if (conn.State == ConnectionState.Closed) conn.Open();
 
-                    var query = "SELECT [Divison] " +
+                    var query = "SELECT [DivisIon] " +
                                 "     , [Names] " +
                                 "  FROM [dbo].[divtbl]";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
@@ -219,9 +216,6 @@ namespace BookRentalShop
             isNew = true;
         }
         #endregion
-
-
-
 
     }
 }

@@ -39,6 +39,9 @@ namespace BookRentalShop
             // 
             this.DgvData.AllowUserToAddRows = false;
             this.DgvData.AllowUserToDeleteRows = false;
+            this.DgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvData.Location = new System.Drawing.Point(23, 63);
             this.DgvData.Name = "DgvData";
@@ -49,6 +52,7 @@ namespace BookRentalShop
             // 
             // BtnCancel
             // 
+            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCancel.Location = new System.Drawing.Point(431, 277);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 34);
@@ -59,6 +63,7 @@ namespace BookRentalShop
             // 
             // BtnSelect
             // 
+            this.BtnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnSelect.Location = new System.Drawing.Point(350, 277);
             this.BtnSelect.Name = "BtnSelect";
             this.BtnSelect.Size = new System.Drawing.Size(75, 34);
@@ -81,6 +86,7 @@ namespace BookRentalShop
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "도서 리스트";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
+            this.Resize += new System.EventHandler(this.FrmDivCode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.ResumeLayout(false);
 
