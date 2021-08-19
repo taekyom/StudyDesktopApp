@@ -40,7 +40,7 @@
 ```
 <br/> 
 
-2. 도서 구분코드 관리 <br/><br/>
+2. 도서 구분코드 관리 <br/>
 ![image](https://user-images.githubusercontent.com/77951868/129998775-4abf3430-40c3-4ef5-acbe-d12f88cf4cdf.png)<br/>
 ![image](https://user-images.githubusercontent.com/77951868/129994916-ed01a208-e337-4f4d-97c5-95d7cc13b2d1.png)<br/><br/>
 
