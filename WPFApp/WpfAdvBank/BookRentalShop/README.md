@@ -1,5 +1,6 @@
 # 🏫 BookRentalShop <br/>
 - C# Winform을 활용해 도서 대여 관리 프로그램 작성
+- Winform Metro UI Framework 활용한 UI 디자인 구현
 - 로그인, 도서 구분코드 관리, 도서관리, 대여관리 기능을 넣은 폼 작성
 - 각 폼마다 CRUD(Create, Read, Update, Delete) 버튼 이벤트 작성
 - Winform과 DB 연결을 위해 SQL Server연동(SqlConnection 클래스 선언, SqlCommand로 쿼리문 사용)
