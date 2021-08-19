@@ -42,19 +42,19 @@
 
 2. 도서 구분코드 관리 <br/><br/>
 ![image](https://user-images.githubusercontent.com/77951868/129998775-4abf3430-40c3-4ef5-acbe-d12f88cf4cdf.png)<br/>
-![image](https://user-images.githubusercontent.com/77951868/129994916-ed01a208-e337-4f4d-97c5-95d7cc13b2d1.png)<br/>
+![image](https://user-images.githubusercontent.com/77951868/129994916-ed01a208-e337-4f4d-97c5-95d7cc13b2d1.png)<br/><br/>
 
 3. 도서관리 <br/><br/>
-![image](https://user-images.githubusercontent.com/77951868/129997112-01c8b110-40c4-4351-abf7-dce6a524e78b.png)<br/>
+![image](https://user-images.githubusercontent.com/77951868/129997112-01c8b110-40c4-4351-abf7-dce6a524e78b.png)<br/><br/>
 
 4. 회원관리 <br/><br/>
-![image](https://user-images.githubusercontent.com/77951868/129997910-e7ac5d25-4dd5-460e-8377-7360331b2fbf.png)<br/>
+![image](https://user-images.githubusercontent.com/77951868/129997910-e7ac5d25-4dd5-460e-8377-7360331b2fbf.png)<br/><br/>
 
 5. 대여관리 <br/><br/>
 - 대여할 회원 선택(회원리스트 팝업)<br/><br/>
-![image](https://user-images.githubusercontent.com/77951868/129998809-134b8408-f78c-4f4c-84c6-d9b8f3016fc3.png)<br/>
+![image](https://user-images.githubusercontent.com/77951868/129998809-134b8408-f78c-4f4c-84c6-d9b8f3016fc3.png)<br/><br/>
 - 대여할 도서 선택(도서리스트 팝업)<br/><br/>
-![image](https://user-images.githubusercontent.com/77951868/129998823-5b6dcd8f-75cb-4d64-b15c-59aed6f27276.png)<br/>
+![image](https://user-images.githubusercontent.com/77951868/129998823-5b6dcd8f-75cb-4d64-b15c-59aed6f27276.png)<br/><br/>
 
 6. 종료화면<br/><br/>
 ![image](https://user-images.githubusercontent.com/77951868/129997162-1b87a006-6511-41eb-ba71-3b0382cda02b.png)
